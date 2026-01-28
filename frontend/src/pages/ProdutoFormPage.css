@@ -1,0 +1,17 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+}
+
+.input-bonito {
+  padding: 10px;
+  border: 1px solid #c8c8c8;
+  border-radius: 0px;
+  font-size: 1rem;
+}
+
+.select-bg-white {
+  background-color: white;
+}
