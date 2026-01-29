@@ -106,6 +106,9 @@ const HomePage = () => {
                                 {'★'.repeat(Math.round(prod.nota)) + '☆'.repeat(5 - Math.round(prod.nota))}
                             </div>
                             <p className="price">{formatarMoeda(prod.preco)}</p>
+                            <p className="estoque-info">
+    {prod.quantidade > 0 ? `Restam: ${prod.quantidade}` : 'ESGOTADO ❌'}
+</p>
                         </div>
                     </Link>
 

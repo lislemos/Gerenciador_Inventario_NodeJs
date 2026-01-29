@@ -7,10 +7,11 @@ import './ProdutoFormPage.css';
 const ProdutoFormPage = () => {
   const { id } = useParams(); 
   const navigate = useNavigate();
+  
    
-  const [form, setForm] = useState({
-    nome: '', descricao: '', preco: '', categoria: '', nota: 5, imagem_url: ''
-  });
+const [form, setForm] = useState({
+    nome: '', descricao: '', preco: '', categoria: '', nota: 5, imagem_url: '', quantidade: 0
+});
 
   useEffect(() => {
     if (id) {
@@ -48,6 +49,8 @@ const ProdutoFormPage = () => {
           <input name="nome" placeholder="Nome" value={form.nome} onChange={handleChange} required className="input-bonito" />
           <textarea name="descricao" placeholder="Descrição" value={form.descricao} onChange={handleChange} className="input-bonito" />
           <input name="preco" type="number" step="0.01" placeholder="Preço" value={form.preco} onChange={handleChange} required className="input-bonito" />
+          <input name="quantidade" type="number" placeholder="Qtd em Estoque" value={form.quantidade} onChange={handleChange} required className="input-bonito" />
+          
 
           <select name="categoria" value={form.categoria} onChange={handleChange} required className="input-bonito select-bg-white">
               <option value="">Selecione uma Categoria</option>
