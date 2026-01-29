@@ -53,11 +53,11 @@ exports.buscarProdutoPorId = async (req, res) => {
 };
 
 exports.criarProduto = async (req, res) => {
-    const { nome, descricao, preco, categoria, nota, imagem_url } = req.body;
+    const { nome, descricao, preco, categoria, nota, imagem_url, quantidade } = req.body;
     try {
         const [result] = await db.execute(
-            'INSERT INTO produtos (nome, descricao, preco, categoria, nota, imagem_url) VALUES (?, ?, ?, ?, ?, ?)',
-            [nome, descricao, preco, categoria, nota, imagem_url]
+            'INSERT INTO produtos (nome, descricao, preco, categoria, nota, imagem_url, quantidade) VALUES (?, ?, ?, ?, ?, ?, ?)',
+            [nome, descricao, preco, categoria, nota, imagem_url, quantidade]
         );
         res.status(201).json({ message: 'Produto criado!', id: result.insertId });
     } catch (error) {
@@ -67,11 +67,11 @@ exports.criarProduto = async (req, res) => {
 
 exports.atualizarProduto = async (req, res) => {
     const { id } = req.params;
-    const { nome, descricao, preco, categoria, nota, imagem_url } = req.body;
+    const { nome, descricao, preco, categoria, nota, imagem_url, quantidade } = req.body;
     try {
         await db.execute(
-            'UPDATE produtos SET nome = ?, descricao = ?, preco = ?, categoria = ?, nota = ?, imagem_url = ? WHERE id = ?',
-            [nome, descricao, preco, categoria, nota, imagem_url, id]
+            'UPDATE produtos SET nome = ?, descricao = ?, preco = ?, categoria = ?, nota = ?, imagem_url = ?, quantidade = ? WHERE id = ?',
+            [nome, descricao, preco, categoria, nota, imagem_url, quantidade, id]
         );
         res.json({ message: 'Produto atualizado!' });
     } catch (error) {
