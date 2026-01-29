@@ -8,7 +8,12 @@ import './HomePage.css';
 const HomePage = () => {
   const [produtos, setProdutos] = useState([]);
   const { user } = useContext(AuthContext);
-
+  const formatarMoeda = (valor) => {
+    return new Intl.NumberFormat('pt-BR', {
+      style: 'currency',
+      currency: 'BRL'
+    }).format(valor);
+  };
   const [busca, setBusca] = useState('');
   const [filtroCategoria, setFiltroCategoria] = useState('');
   const [filtroNota, setFiltroNota] = useState('');
@@ -100,7 +105,7 @@ const HomePage = () => {
                             <div className="rating-stars">
                                 {'★'.repeat(Math.round(prod.nota)) + '☆'.repeat(5 - Math.round(prod.nota))}
                             </div>
-                            <p className="price">R$ {parseFloat(prod.preco).toFixed(2)}</p>
+                            <p className="price">{formatarMoeda(prod.preco)}</p>
                         </div>
                     </Link>
 
