@@ -8,7 +8,6 @@
 ![REST](https://img.shields.io/badge/API-RESTful-blueviolet)
 ![Deploy](https://img.shields.io/badge/Deploy-Render-success)
 ![Database](https://img.shields.io/badge/Database-Aiven-blue)
-![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
 ---
 
@@ -59,6 +58,12 @@ Exercitar conceitos de:
 - ✅ Sistema de avaliações
 - ✅ Atualização automática da média
 - ✅ Filtros e ordenação
+
+---
+## LogIn User - Para visualizar
+
+user@user.com
+123456
 
 ---
 
